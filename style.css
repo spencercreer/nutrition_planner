@@ -1,0 +1,28 @@
+.meal{
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.br-0{
+    border-radius: 0;
+}
+
+.carb{
+    background-color: #C6E0B4;
+    border-radius: 0px;
+}
+
+.protein{
+    background-color: #BDD7EE;
+    border-radius: 0px;
+}
+
+.fat{
+    background-color: #FFE699;
+    border-radius: 0px;
+}
+
+.sodium{
+    background-color: #F8CBAD;
+    border-radius: 0px;
+}
