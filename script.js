@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    console.log("hit")
+  let meals = ["Breakfast", "Snack 1", "Lunch", "Snack 2", "Dinner", "Snack 3"]
     for (let i = 0; i < 6; i++) {
         $("#meal-schedule").append(
             `<div class="meal">
