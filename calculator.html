@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="./nutrient_calculator.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Link</a>
+                  <a class="nav-link" href="./index.html">Link</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,7 +50,7 @@
       </header>
       <main>
           <div class="container">
-              <h1 class="text-center">Calorie and Macronutrient Calculator</h1>
+              <h1 class="text-center">Nutrient Calculator</h1>
               <div class="row">
                   <div class="col">
                       <div class="text-center">
@@ -96,7 +96,7 @@
                   <div class="col">
                       <form class="mt-4">
                         <div class="form-group">
-                            <label for="goal-weight">Goal Weight</label>
+                            <label for="goal-weight">Goal Weight (lb)</label>
                             <input type="text" class="form-control" id="goal-weight" placeholder="Goal Weight">
                         </div>
                         <div class="form-group">
@@ -104,17 +104,51 @@
                             <input type="text" class="form-control" id="goal-bfp" placeholder="Body Fat Percentage">
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Goal Body Fat</label>
-                            <input class="form-control" type="text" placeholder="" readonly>
+                            <label for="formGroupExampleInput2">Goal Body Fat (lb)</label>
+                            <input class="form-control" id="goal-bf" type="text" placeholder="" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="formGroupExampleInput2">Lean Body Mass</label>
-                            <input class="form-control" type="text" placeholder="" readonly>
+                            <label for="formGroupExampleInput2">Lean Body Mass (lb)</label>
+                            <input class="form-control" id="goal-lbm" type="text" placeholder="" readonly>
                         </div>
-                        <button id="submitBtn" type="submit" class="submitBtn btn btn-primary">Submit</button>
                       </form>
+                      <button id="calculateBtn" class="btn btn-primary">Submit</button>
                   </div>
               </div>
+              <form class="mt-4">
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">BMR (kcal)</label>
+                  <input class="form-control" id="bmr" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">TDEE (kcal)</label>
+                    <input class="form-control" id="tdee" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Calorie Deficit (%)</label>
+                    <input class="form-control" id="cal-deficit" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Maintain Calories</label>
+                    <input class="form-control" id="sug-cal" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="formGroupExampleInput2">Target Calories (cal)</label>
+                  <input class="form-control" id="goal-bf" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Target Carbs (g)</label>
+                    <input class="form-control" id="carb" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Target Protein (g)</label>
+                    <input class="form-control" id="protein" type="text" placeholder="" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Target Fat (g)</label>
+                    <input class="form-control" id="fat" type="text" placeholder="" readonly>
+                </div>
+              </form>
           </div>
       </main>
       <footer>
