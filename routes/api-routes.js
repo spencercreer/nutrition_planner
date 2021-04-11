@@ -42,12 +42,26 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
+        first_name: req.user.first_name
       });
     }
   });
 
-  app.put("/api/user_info/:id", (req, res)=> {
-    
+  app.put("/api/user_data/:id", (req, res) => {
+    db.User.update({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      gender: req.body.gender,
+      weight: req.body.weight,
+      height: req.body.height,
+      age: req.body.age
+    },
+    {
+      where:
+      {
+        id: req.params.id
+      }
+    }).then((updateUser) => res.json(updateUser))
   })
 };
