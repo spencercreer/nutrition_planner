@@ -1,21 +1,23 @@
 $(document).ready(function () {
   let userId;
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
+  // Get user data from database
   $.get("/api/user_data").then(function (data) {
+    console.log('hello')
     userId = data.id;
-    console.log(userId);
   });
 
+
+  // newMember button on click
   $('#userInfoBtn').on('click', function (event) {
-    console.log(userId);
+    event.preventDefault();
     let firstName = $('#first-name').val();
     let lastName = $('#last-name').val();
     let gender = 'male';
-    let weight = $('#weight').val();
-    let height = $('#height').val();
-    let age = $('#age').val();
+    let weight = parseInt($('#weight').val());
+    let height = parseInt($('#height').val());
+    let age = parseInt($('#age').val());
     let bfp = $('#bfp').val();
+    // Update user data in database, then redirect to goals page
     $.ajax('/api/user_data/' + userId, {
       type: 'PUT',
       data: {
@@ -24,11 +26,12 @@ $(document).ready(function () {
         'gender': gender,
         'weight': weight,
         'height': height,
-        'age': age
+        'age': age,
       }
     }).then(() => {
-      console.log(`user ${userId} updated`);
-      window.location.href = '/goals';
+      window.location.replace('/goals');
     });
   });
+
+
 });

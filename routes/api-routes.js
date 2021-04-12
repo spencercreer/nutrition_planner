@@ -4,7 +4,7 @@ var passport = require("../config/passport");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
-  // If the user has valid login credentials, send them to the members page.
+  // If the user has valid login credentials, send them to the newMember page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json(req.user);
@@ -34,6 +34,7 @@ module.exports = function(app) {
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
+
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
@@ -43,7 +44,15 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        first_name: req.user.first_name
+        firstName: req.user.first_name,
+        last_name: req.user.last_name,
+        gender: req.user.gender,
+        weight: req.user.weight,
+        height: req.user.height,
+        age: req.user.age,
+        goal: req.user.goal,
+        goal_weight: req.user.goal_weight,
+        goal_bfp: req.user.goal_bfp
       });
     }
   });
@@ -55,7 +64,10 @@ module.exports = function(app) {
       gender: req.body.gender,
       weight: req.body.weight,
       height: req.body.height,
-      age: req.body.age
+      age: req.body.age,
+      goal: req.body.goal,
+      goal_weight: req.body.goal_weight,
+      goal_bfp: req.body.goal_bfp
     },
     {
       where:
