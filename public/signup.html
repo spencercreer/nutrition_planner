@@ -2,46 +2,177 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Commit Signup</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="stylesheets/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+  <div id="signup-page">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+        </div>
       </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <h2>Sign Up Form</h2>
+          <form class="signup">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email-input" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="password-input" placeholder="Password">
+            </div>
+            <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+              <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span> <span class="msg"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </form>
+          <br />
+          <p>Or log in <a href="/login">here</a></p>
+        </div>
       </div>
     </div>
   </div>
 
+  <div id="info-page" style="display: none">
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="mt-5">Welcome to Commit Fitness!</h2>
+            <p>Commit is your complete guide to total health and fitness.</p>
+            <p>We're excited that you have chosen to join our community. Before we begin tell us about yourself.</p>
+          </div>
+        </div>
+      </div>
+      <form>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="first-name">First name</label>
+              <input type="text" class="form-control" id="first-name" placeholder="First name" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="last-name">Last name</label>
+              <input type="text" class="form-control" id="last-name" placeholder="Last name" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+                required>
+              <label class="form-check-label" for="inlineRadio1">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+                required>
+              <label class="form-check-label" for="inlineRadio2">Female</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Weight">Weight (lb)</label>
+              <input type="text" class="form-control" id="weight" placeholder="Weight" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="height">Height (in)</label>
+              <input type="text" class="form-control" id="height" placeholder="Height" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="age">Age (yr)</label>
+          <input type="text" class="form-control" id="age" placeholder="Age" required>
+        </div>
+        <div class="form-group">
+          <label for="activity">Activity</label>
+          <select class="custom-select mr-sm-2" id="activity" required>
+            <option selected disabled value>How much do you workout per week?</option>
+            <option value="1">Less than one hour of physical activity per week.</option>
+            <option value="2">One to three hours of physical activity per week.</option>
+            <option value="3">Four to six hours of physical activity per week.</option>
+            <option value="4">Seven to nine hours of physical activity per week.</option>
+            <option value="5">Ten or more hours of physical activity per week.</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bf-percent">Body Fat %</label>
+          <input type="text" class="form-control" id="bf-percent" placeholder="Body Fat Percentage">
+        </div>
+        <button id="info-button" class="btn btn-primary" type="submit">Submit</button>
+      </form>
+
+    </div>
+  </div>
+
+  <div id="goals-page" style="display: none;">
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <h2 class="mt-5" id="goals-intro">Hello NEW USER NAME!</h2>
+            <p>Tell us about your health goals</p>
+          </div>
+        </div>
+      </div>
+      <form>
+        <div class="form-group mt-4">
+          <label for="goal">Goal</label>
+          <select class="custom-select mr-sm-2" id="goal" required>
+            <option selected disabled value>What is your fitness goal?</option>
+            <option value="1">Lose Fat</option>
+            <option value="2">Maintain Weight</option>
+            <option value="3">Build Muscle</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="goal-weight">Goal Weight (lb)</label>
+          <input type="text" class="form-control" id="goal-weight" placeholder="Goal Weight" required>
+        </div>
+        <div class="form-group">
+          <label for="goal-bfp">Goal Body Fat %</label>
+          <input type="text" class="form-control" id="goal-bfp" placeholder="Body Fat Percentage">
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Goal Body Fat (lb)</label>
+          <input class="form-control" id="goal-bf" type="text" placeholder="" readonly>
+        </div>
+        <div class="form-group">
+          <label for="formGroupExampleInput2">Goal Lean Body Mass (lb)</label>
+          <input class="form-control" id="goal-lbm" type="text" placeholder="" readonly>
+        </div>
+        <button id="goal-button" class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/signup.js"></script>
 
 </body>

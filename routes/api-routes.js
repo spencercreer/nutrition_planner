@@ -16,10 +16,19 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      gender: req.body.gender,
+      weight: req.body.weight,
+      height: req.body.height,
+      age: req.body.age,
+      goal: req.body.goal,
+      goal_weight: req.body.goal_weight,
+      goal_bfp: req.body.goal_bfp
     })
       .then(function() {
-        res.redirect(307, "/api/login");
+        res.json(req.body)
       })
       .catch(function(err) {
         res.status(401).json(err);
@@ -44,15 +53,6 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        firstName: req.user.first_name,
-        last_name: req.user.last_name,
-        gender: req.user.gender,
-        weight: req.user.weight,
-        height: req.user.height,
-        age: req.user.age,
-        goal: req.user.goal,
-        goal_weight: req.user.goal_weight,
-        goal_bfp: req.user.goal_bfp
       });
     }
   });
@@ -75,5 +75,6 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then((updateUser) => res.json(updateUser))
-  })
+  });
 };
+

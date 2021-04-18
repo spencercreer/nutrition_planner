@@ -1,4 +1,6 @@
+
 $(document).ready(function () {
+  
     // Get user data from database
     $.get('/api/user_data').then(function (data) {
         // Set variables from get database
@@ -32,9 +34,10 @@ $(document).ready(function () {
         tdee = 1.5 * bmr;
         calDeficit = 20;
         targetCal = tdee * (1 - calDeficit / 100);
-        $('#bmr').attr('placeholder', Math.round(bmr));
-        $('#tdee').attr('placeholder', Math.round(tdee));
-        $('#cal-deficit').attr('placeholder', calDeficit);
-        $('#target-cal').attr('placeholder', Math.round(targetCal));
+        console.log(bmr);
+        $('#bmr').text(`BMR: ${Math.round(bmr)}`);
+        $('#tdee').text(`TDEE: ${Math.round(tdee)}`);
+        $('#cal-deficit').text(`Calorie Deficit: ${calDeficit}`);
+        $('#target-cal').text(`Target Calories: ${Math.round(targetCal)}`);
     });
 });
