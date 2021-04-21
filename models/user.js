@@ -38,6 +38,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    activity: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     goal: {
       type: DataTypes.STRING,
       allowNull: true

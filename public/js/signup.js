@@ -36,6 +36,7 @@ $(document).ready(function () {
     userData.weight = parseInt($('#weight').val());
     userData.height = parseInt($('#height').val());
     userData.age = parseInt($('#age').val());
+    userData.activity = $('#activity').val();
     userData.bfp = $('#bfp').val();
 
     $("#goals-intro").text(`Hello ${userData.firstName}!`)
@@ -66,6 +67,7 @@ $(document).ready(function () {
       weight: userData.weight,
       height: userData.height,
       age: userData.age,
+      activity: userData.activity,
       goal: userData.goal,
       goal_weight: userData.goalWeight,
       goal_bfp: userData.goalBfp
