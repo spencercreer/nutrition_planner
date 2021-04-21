@@ -19,6 +19,7 @@
     "node": "^15.10.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "plotly.js-dist": "^1.58.4",
     "react-minimal-pie-chart": "^8.2.0",
     "sequelize": "^5.22.4"
   }
