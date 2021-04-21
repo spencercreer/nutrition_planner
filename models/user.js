@@ -20,35 +20,43 @@ module.exports = function(sequelize, DataTypes) {
     // User information
     first_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
-    weight: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    height: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    activity: {
+    gender: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     goal: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
+    },
+    weight: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    height: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    age: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    activity: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    goal: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     goal_weight: {
       type: DataTypes.INTEGER,
-      allowNull: true
+      allowNull: false
     },
     goal_bfp: {
       type: DataTypes.INTEGER,

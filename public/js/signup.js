@@ -32,7 +32,7 @@ $(document).ready(function () {
     event.preventDefault();
     userData.firstName = $('#first-name').val();
     userData.lastName = $('#last-name').val();
-    userData.gender = 'male';
+    userData.gender = $("input[name='inlineRadioOptions']:checked").val();
     userData.weight = parseInt($('#weight').val());
     userData.height = parseInt($('#height').val());
     userData.age = parseInt($('#age').val());

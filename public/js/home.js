@@ -4,11 +4,9 @@ $(document).ready(function () {
     $.get('/api/user_data').then(function (data) {
         console.log(data);
         // Set variables from get database
-        let userId = data.id;
-        let email = data.email;
         let firstName = data.first_name;
         let lastName = data.last_name;
-        let gender = 'male';
+        let gender = data.gender;
         let weight = data.weight;
         let height = data.height;
         let age = data.age;
@@ -89,15 +87,15 @@ $(document).ready(function () {
 
         // Calculate target calories, carbs, protein, and fat
         targetCal = Math.round(tdee * (1 - calDeficit / 100));
-        targetCarbCal = targetCal * targetCarbPct;
-        targetProCal = targetCal * targetProPct;
-        targetFatCal = targetCal * targetFatPct;
-        targetCarbG = targetCarbCal/4;
-        targetProG = targetProCal/4;
-        targetFatG = targetFatCal/4;
+        targetCarbCal = Math.round(targetCal * targetCarbPct);
+        targetProCal = Math.round(targetCal * targetProPct);
+        targetFatCal = Math.round(targetCal * targetFatPct);
+        targetCarbG = Math.round(targetCarbCal/4);
+        targetProG = Math.round(targetProCal/4);
+        targetFatG = Math.round(targetFatCal/9);
         
-        // Generate html
-        $('#intro').text(`${firstName} ${lastName}'s Commit Profile`);
+        // Update html
+        $('#intro').text(`${firstName} ${lastName}'s Commit Dashboard`);
         $('#goal').text(`Commit Goal: ${goal}`)
         $('#weight').text(`Weight: ${weight} lb`);
         $('#goal-weight').text(`Goal Weight: ${goalWeight} lb`);
