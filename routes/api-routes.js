@@ -7,7 +7,20 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the newMember page.
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
-    res.json(req.user);
+    res.json({
+      email: req.body.email,
+      password: req.body.password,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      gender: req.body.gender,
+      weight: req.body.weight,
+      height: req.body.height,
+      age: req.body.age,
+      activity: req.body.activity,
+      goal: req.body.goal,
+      goal_weight: req.body.goal_weight,
+      goal_bfp: req.body.goal_bfp
+    });
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -29,7 +42,7 @@ module.exports = function (app) {
       goal_bfp: req.body.goal_bfp
     })
       .then(function () {
-        res.redirect("/api/login")
+        res.redirect(307, "/api/login")
       })
       .catch(function (err) {
         res.status(401).json(err);
@@ -86,6 +99,15 @@ module.exports = function (app) {
           id: req.params.id
         }
       }).then((updateUser) => res.json(updateUser))
+  });
+
+  // Route for getting food data
+  app.get("/api/food_data", function (req, res) {
+    db.Food.findAll().then((dbFood) => res.json(dbFood));
+  });
+  // Route for getting recipe data
+  app.get("/api/recipe_data", function (req, res) {
+    db.Meal.findAll().then((dbRecipe) => res.json(dbRecipe));
   });
 };
 

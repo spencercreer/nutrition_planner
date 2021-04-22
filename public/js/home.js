@@ -95,8 +95,8 @@ $(document).ready(function () {
         targetFatG = Math.round(targetFatCal/9);
         
         // Update html
-        $('#intro').text(`${firstName} ${lastName}'s Commit Dashboard`);
-        $('#goal').text(`Commit Goal: ${goal}`)
+        $('#intro').text(`Commit Dashboard`);
+        $('#goal').text(`Goal: ${goal}`)
         $('#weight').text(`Weight: ${weight} lb`);
         $('#goal-weight').text(`Goal Weight: ${goalWeight} lb`);
         
