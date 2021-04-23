@@ -10,7 +10,7 @@ $(document).ready(function () {
             `);
         });
         $('.add-button').click(function () {
-            $('#food-input').val(data[this.id-1].name);
+            $('#meal-input').val(data[this.id-1].name);
             $('#staticBackdrop').modal('hide');
         });
     });
@@ -25,9 +25,29 @@ $(document).ready(function () {
             `);
         });
         $('.add-button').click(function () {
-            $('#recipe-input').val(data[this.id-1].name);
+            $('#meal-input').val(data[this.id-1].name);
             $('#staticBackdrop2').modal('hide');
         });
     });
 
+    $('#addMealBtn').click(function(event) {
+        event.preventDefault();
+        
+        mealValue = $('#meal-input').val();
+        meal = $('#meal').val();
+        console.log(mealValue);
+        console.log(meal);
+        if(meal === 1) {
+            $('#breakfastPlan').append(`<li>${mealValue}</li>`);
+        } else if(meal === '2') {
+            $('#lunchPlan').append(`<li>${mealValue}</li>`);
+        } else if(meal === '3') {
+            $('#dinnerPlan').append(`<li>${mealValue}</li>`);
+        } else if(meal === '4') {
+            $('#snackPlan').append(`<li>${mealValue}</li>`);
+        } else {
+            $('#dessertPlan').append(`<li>${mealValue}</li>`);
+        }
+        
+    })
 });
