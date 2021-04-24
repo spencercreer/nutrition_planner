@@ -1,9 +1,9 @@
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-    class Meal extends Model {
+    class Recipe extends Model {
 
     };
-    Meal.init({
+    Recipe.init({
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -38,11 +38,9 @@ module.exports = (sequelize, DataTypes) => {
         }
     }, {
         sequelize,
-        modelName: 'Meal',
+        modelName: 'Recipe',
         timestamps: false,
-    }
-    );
+    });
         
-      
-    return Meal;
+    return Recipe;
 };

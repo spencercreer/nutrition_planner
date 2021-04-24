@@ -107,7 +107,7 @@ module.exports = function (app) {
   });
   // Route for getting recipe data
   app.get("/api/recipe_data", function (req, res) {
-    db.Meal.findAll().then((dbRecipe) => res.json(dbRecipe));
+    db.Recipe.findAll().then((dbRecipe) => res.json(dbRecipe));
   });
 };
 
