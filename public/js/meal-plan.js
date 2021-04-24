@@ -3,10 +3,16 @@ $(document).ready(function () {
     // Get food data from database
     $.get('/api/food_data').then(function (data) {
         data.forEach(food => {
-            $('#modal-body').append(`
-            <div class="row">
-            <button id=${food.id} class=add-button>+</button><p style="display: inline-block">${food.name} ${food.serving_size} ${food.carbs} ${food.protein} ${food.fat}</p>
-            </div>  
+            $('#food-modal-body').append(`
+            <tr>
+                <th scope="row"><button id=${food.id} class=add-button>+</button></th>
+                <td>${food.name}</td>
+                <td>${food.serving_size}</td>
+                <td>${Math.round(food.carbs)} g</td>
+                <td>${Math.round(food.protein)} g</td>
+                <td>${Math.round(food.fat)} g</td>
+                <td>${Math.round(food.sodium)} g</td>
+            </tr>
             `);
         });
         $('.add-button').click(function () {
@@ -19,9 +25,15 @@ $(document).ready(function () {
     $.get('/api/recipe_data').then(function (data) {
         data.forEach(recipe => {
             $('#recipe-modal-body').append(`
-            <div class="row">
-            <button id=${recipe.id} class=add-button>+</button><p style="display: inline-block">${recipe.name} ${recipe.serving_size} ${recipe.carbs} ${recipe.protein} ${recipe.fat}</p>
-            </div>  
+            <tr>
+                <th scope="row"><button id=${recipe.id} class=add-button>+</button></th>
+                <td>${recipe.name}</td>
+                <td>${recipe.serving_size}</td>
+                <td>${Math.round(recipe.carbs)} g</td>
+                <td>${Math.round(recipe.protein)} g</td>
+                <td>${Math.round(recipe.fat)} g</td>
+                <td>${Math.round(recipe.sodium)} g</td>
+            </tr>
             `);
         });
         $('.add-button').click(function () {
@@ -35,9 +47,7 @@ $(document).ready(function () {
         
         mealValue = $('#meal-input').val();
         meal = $('#meal').val();
-        console.log(mealValue);
-        console.log(meal);
-        if(meal === 1) {
+        if(meal === '1') {
             $('#breakfastPlan').append(`<li>${mealValue}</li>`);
         } else if(meal === '2') {
             $('#lunchPlan').append(`<li>${mealValue}</li>`);
@@ -48,6 +58,5 @@ $(document).ready(function () {
         } else {
             $('#dessertPlan').append(`<li>${mealValue}</li>`);
         }
-        
     })
 });

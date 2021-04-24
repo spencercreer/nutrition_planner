@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="card col-md-12 px-0">
                     <div class="card-header">
-                        <h3 style="display:inline;">Desert</h3>
+                        <h3 style="display:inline;">Dessert</h3>
                     </div>
                     <div class="card-body">
                         <ul id="desertPlan">
@@ -128,7 +128,7 @@
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="staticBackdropLabel">Food Database</h5>
@@ -136,8 +136,22 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div id="modal-body" class="modal-body">
-                            <p>Food, Serving Size, Carbs, Protein, Fat</p>
+                        <div class="modal-body">
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Recipe</th>
+                                    <th scope="col">Serving Size</th>
+                                    <th scope="col">Carbs</th>
+                                    <th scope="col">Protein</th>
+                                    <th scope="col">Fat</th>
+                                    <th scope="col">Sodium</th>
+                                  </tr>
+                                </thead>
+                                 <tbody id="food-modal-body">
+                                </tbody>
+                              </table>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -150,7 +164,7 @@
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop2" data-backdrop="static" data-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-dialog modal-xl modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="staticBackdropLabel">Recipe Database</h5>
@@ -158,8 +172,22 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div id="recipe-modal-body" class="modal-body">
-                            <p>Recipe, Serving Size, Carbs, Protein, Fat</p>
+                        <div class="modal-body">
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Recipe</th>
+                                    <th scope="col">Serving Size</th>
+                                    <th scope="col">Carbs</th>
+                                    <th scope="col">Protein</th>
+                                    <th scope="col">Fat</th>
+                                    <th scope="col">Sodium</th>
+                                  </tr>
+                                </thead>
+                                 <tbody id="recipe-modal-body">
+                                </tbody>
+                              </table>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
