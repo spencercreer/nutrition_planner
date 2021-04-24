@@ -109,5 +109,15 @@ module.exports = function (app) {
   app.get("/api/recipe_data", function (req, res) {
     db.Recipe.findAll().then((dbRecipe) => res.json(dbRecipe));
   });
+
+  app.post('/api/meal_plan', (req, res) => {
+    db.MealPlan.create({
+      name: req.body.mealPlanName,
+      user_id: req.body.user_id
+    })
+    .then((dbMealPlan) => {
+      res.json(dbMealPlan)
+    })
+  });
 };
 

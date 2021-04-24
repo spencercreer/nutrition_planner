@@ -58,5 +58,29 @@ $(document).ready(function () {
         } else {
             $('#dessertPlan').append(`<li>${mealValue}</li>`);
         }
+    });
+
+    $('#createMealPlanBtn').click(function(event) {
+        event.preventDefault();
+
+        let mealPlanName = $('#mp-name').val();
+        let mealPlan = {
+            mealPlanName: mealPlanName.trim(),
+            user_id: 1
+        }
+        fetch('/api/meal_plan', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(mealPlan)
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success in submitting mealPlan:', data)
+        })
+        .catch((error) => {
+            console.error('Error:', error)
+        });
     })
 });

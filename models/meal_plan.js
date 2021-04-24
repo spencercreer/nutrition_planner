@@ -9,71 +9,71 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         user_id: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        breakfast_food1: {
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         breakfast_food1: {
-            type: DataTypes.INT,
-            allowNull: true
-        },
-        breakfast_food1: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         breakfast_food2: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         breakfast_food3: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         lunch_food1: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         lunch_food2: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         lunch_food3: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         dinner_food1: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         dinner_food2: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         dinner_food3: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         snack_food1: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         snack_food2: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         snack_food3: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         dessert_food1: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         dessert_food2: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         dessert_food3: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
     }, {
