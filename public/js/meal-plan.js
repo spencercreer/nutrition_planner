@@ -1,11 +1,11 @@
 $(document).ready(function () {
 
     // Get food data from database
-    $.get('/api/food_data').then(function (data) {
-        data.forEach(food => {
+    $.get('/api/food_data').then(function (foodData) {
+        foodData.forEach(food => {
             $('#food-modal-body').append(`
             <tr>
-                <th scope="row"><button id=${food.id} class=add-button>+</button></th>
+                <th scope="row"><button id=${food.id} class=food-add-button>+</button></th>
                 <td>${food.name}</td>
                 <td>${food.serving_size}</td>
                 <td>${Math.round(food.carbs)} g</td>
@@ -15,18 +15,18 @@ $(document).ready(function () {
             </tr>
             `);
         });
-        $('.add-button').click(function () {
-            $('#meal-input').val(data[this.id-1].name);
+        $('.food-add-button').click(function () {
+            $('#meal-input').val(foodData[this.id-1].name);
             $('#staticBackdrop').modal('hide');
         });
     });
 
     // Get recipe data from database
-    $.get('/api/recipe_data').then(function (data) {
-        data.forEach(recipe => {
+    $.get('/api/recipe_data').then(function (recipeData) {
+        recipeData.forEach(recipe => {
             $('#recipe-modal-body').append(`
             <tr>
-                <th scope="row"><button id=${recipe.id} class=add-button>+</button></th>
+                <th scope="row"><button id=${recipe.id} class=recipe-add-button>+</button></th>
                 <td>${recipe.name}</td>
                 <td>${recipe.serving_size}</td>
                 <td>${Math.round(recipe.carbs)} g</td>
@@ -36,8 +36,8 @@ $(document).ready(function () {
             </tr>
             `);
         });
-        $('.add-button').click(function () {
-            $('#meal-input').val(data[this.id-1].name);
+        $('.recipe-add-button').click(function () {
+            $('#meal-input').val(recipeData[this.id-1].name);
             $('#staticBackdrop2').modal('hide');
         });
     });

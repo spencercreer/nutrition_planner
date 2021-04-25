@@ -1,4 +1,52 @@
-form.signup,
-form.login {
-  margin-top: 50px;
+body {
+  background: black;
+  background-image: url("../assets/squat.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.form-box {
+  color: whitesmoke;
+  padding: 40px 30px 20px;
+  background: rgba(0,0,0, .6);
+  height: 100%;
+  position: absolute;
+}
+
+.title {
+  text-align: center;
+  font-size: 56px;
+}
+
+@media (max-width: 767px) {
+  .title {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .entry {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    margin-top: 60px;
+    margin-bottom: 0px;
+  }
+
+  .entry {
+    margin-top: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    margin-top: 130px;
+    margin-bottom: 0px;
+  }
+
+  .entry {
+    margin-top: 22px;
+  }
 }
