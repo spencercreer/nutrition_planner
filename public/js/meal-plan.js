@@ -1,5 +1,14 @@
 $(document).ready(function () {
 
+    var userId;
+    var foodId;
+    var mealPlanName;
+    var mealPlan = [];
+
+    $.get('/api/user_data').then(function (userData) {
+        userId = userData.id
+    });
+
     // Get food data from database
     $.get('/api/food_data').then(function (foodData) {
         foodData.forEach(food => {
@@ -17,6 +26,7 @@ $(document).ready(function () {
         });
         $('.food-add-button').click(function () {
             $('#meal-input').val(foodData[this.id-1].name);
+            foodId = this.id;
             $('#staticBackdrop').modal('hide');
         });
     });
@@ -38,6 +48,7 @@ $(document).ready(function () {
         });
         $('.recipe-add-button').click(function () {
             $('#meal-input').val(recipeData[this.id-1].name);
+            foodId = this.id;
             $('#staticBackdrop2').modal('hide');
         });
     });
@@ -63,10 +74,10 @@ $(document).ready(function () {
     $('#createMealPlanBtn').click(function(event) {
         event.preventDefault();
 
-        let mealPlanName = $('#mp-name').val();
+        mealPlanName = $('#mp-name').val();
         let mealPlan = {
             mealPlanName: mealPlanName.trim(),
-            user_id: 1
+            user_id: userId
         }
         fetch('/api/meal_plan', {
             method: 'POST',
@@ -82,5 +93,10 @@ $(document).ready(function () {
         .catch((error) => {
             console.error('Error:', error)
         });
-    })
+    });
+
+    $('#saveMealPlanBtn').click(function(event) {
+        event.preventDefault();
+
+    });
 });

@@ -10,7 +10,7 @@ const db = require("./models");
 // Setting up port
 const PORT = process.env.PORT || 8080;
 
-// Creating express app and configuring middleware needed for authentication
+// Creating express app and configuring middleware needed
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
